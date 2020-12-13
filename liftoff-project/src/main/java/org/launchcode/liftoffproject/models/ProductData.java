@@ -34,9 +34,7 @@ public class ProductData {
 
         for (Product product : allProducts) {
 
-            if (product.getType().toLowerCase().contains(lower_val)) {
-                results.add(product);
-            } else if (product.getName().toString().toLowerCase().contains(lower_val)) {
+            if (product.getName().toString().toLowerCase().contains(lower_val)) {
                 results.add(product);
             } else if (product.getDescription().toLowerCase().contains(lower_val)) {
                 results.add(product);
