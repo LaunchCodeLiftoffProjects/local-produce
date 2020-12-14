@@ -13,19 +13,20 @@ public class Product extends AbstractEntity {
     @Size(max = 500, message = "Product description must not exceed 500 characters.")
     private String description;
     private String photo;
-
-    @NotBlank(message = "Please select whether or not product is organic.")
     private boolean organic;
 
     @ManyToOne
     private Vendor vendor;
 
-    public Product(String description, String photo, boolean organic) {
+    public Product(String description, boolean organic, String photo) {
         super();
 
         this.description = description;
         this.photo = photo;
-        this.organic = organic;
+        if (organic) this.organic = true;
+        else {
+            this.organic = false;
+        }
     }
 
     public Product() {}
