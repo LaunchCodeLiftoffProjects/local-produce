@@ -100,11 +100,13 @@ public class ProductController {
         }
 
     @PostMapping("products/edit/{productId}")
-    public String processEditProductForm(@PathVariable int productId, @ModelAttribute @Valid @RequestParam String name, @RequestParam String photo, @RequestParam String type, @RequestParam String description, @RequestParam boolean organic, Errors errors, Model model
-    ) {
-        if (errors.hasErrors()) {
-            return "redirect: vendor/profile";
-        }
+    public String processEditProductForm(@PathVariable int productId, @ModelAttribute @Valid @RequestParam String name,
+                                          @RequestParam String photo,
+                                         @RequestParam String type, @RequestParam String description, @RequestParam boolean organic) {
+
+//        if (errors.hasErrors()) {
+//            return "redirect: vendor/profile";
+//        }
         Optional<Product> optionalProduct = productRepository.findById(productId);
         Product product = (Product) optionalProduct.get();
 

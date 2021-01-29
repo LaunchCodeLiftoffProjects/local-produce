@@ -27,8 +27,11 @@
                             <span th:errors="${product.description}" class="error"></span>
                         </div>
                         <div class="mb-3">
-                            <label th:for="organic">Check box if this item is organic:</label>
-                            <input th:field="${product.organic}" type="checkbox" name="${product.organic}" id = "Yes" value = "true"/>
+                            <label th:for="organic">Select:</label>
+                            <select th:field="${product.organic}">
+                                <option value="true">Organic</option>
+                                <option value="false">Conventional</option>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label th:for="photo">Link to photo:</label>
